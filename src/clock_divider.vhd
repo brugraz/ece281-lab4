@@ -54,7 +54,7 @@ entity clock_divider is
 	generic ( constant k_DIV : natural := 2	); -- How many clk cycles until slow clock toggles
 											   -- Effectively, you divide the clk double this 
 											   -- number (e.g., k_DIV := 2 --> clock divider of 4)
-	port ( 	i_clk    : in std_logic;
+	port(i_clk   : in std_logic;
 			i_reset  : in std_logic;		   -- asynchronous
 			o_clk    : out std_logic		   -- divided (slow) clock
 	);
@@ -62,7 +62,7 @@ end clock_divider;
 
 architecture countCompare of clock_divider is
 	signal f_count	:	natural		:= 0;
-	signal f_clk	:	std_logic	:= '0';
+	signal f_clk	  :	std_logic	:= '0';
 	
 begin
 	-- CONCURRENT STATEMENTS ----------------------------

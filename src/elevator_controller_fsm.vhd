@@ -97,7 +97,7 @@ begin
 	bottom_floor <= floor1;
 	
 	-- Next State Logic            
-  	next_floor <=  current_floor                when is_stopped = '1' else
+  next_floor <=  current_floor                when is_stopped = '1' else
 	               sm_floor'succ(current_floor) when ( go_up_down = '1' and current_floor /= top_floor ) else -- going up
 	               sm_floor'pred(current_floor) when ( go_up_down = '0' and current_floor /= bottom_floor ) else -- going down
 	               current_floor;
